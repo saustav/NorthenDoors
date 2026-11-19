@@ -1,17 +1,19 @@
 # northerndoors.com.np
 
 Website for Northern Doors, Kailashchaur Marg, Uttar Dhoka, Kathmandu.
-Hosted on Mantra Digital's cPanel. Every push to `main` deploys automatically
+Hosted on Mantra Digital's cPanel (account hprnepal, addon domain,
+document root `/home2/hprnepal/northerndoors.com.np`). Never deploy to
+`public_html`: that is hprnepal.org.np. Every push to `main` deploys automatically
 through GitHub Actions (`.github/workflows/deploy.yml`) over FTPS.
 
 ## Repository secrets (Settings > Secrets and variables > Actions)
 
 | Secret | Example |
 | --- | --- |
-| FTP_SERVER | ftp.northerndoors.com.np |
+| FTP_SERVER | the FTP server shown in cPanel > FTP Accounts > Configure FTP Client |
 | FTP_USERNAME | deploy@northerndoors.com.np |
 | FTP_PASSWORD | (password of the cPanel FTP account) |
-| FTP_SERVER_DIR | `./` if the FTP account opens in public_html, otherwise `/public_html/` (must end with `/`) |
+| FTP_SERVER_DIR | `./` (the deploy FTP account opens in /home2/hprnepal/northerndoors.com.np) |
 
 ## Brand
 
