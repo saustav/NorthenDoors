@@ -1,0 +1,28 @@
+# Northern Doors: compression and browser caching (Apache / LiteSpeed on cPanel)
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Images, fonts and icons rarely change: cache for 1 year.
+  <FilesMatch "\.(png|webp|jpe?g|svg|ico|woff2)$">
+    Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+  # HTML: keep fresh so updates show quickly.
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=300, must-revalidate"
+  </FilesMatch>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType image/webp .webp
+</IfModule>
+
+# Keep repository files private
+<FilesMatch "^(README\.md|\.git.*)$">
+  Require all denied
+</FilesMatch>
