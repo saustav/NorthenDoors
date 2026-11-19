@@ -14,12 +14,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get the latest code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Upload changed files to cPanel (FTPS)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          # Real cPanel server. northerndoors.com.np sits behind Cloudflare,
+          # which does not pass FTP, so we connect to the origin directly.
+          server: fishtail.mysecurecloudserver.com
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps

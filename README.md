@@ -6,11 +6,13 @@ document root `/home2/hprnepal/northerndoors.com.np`). Never deploy to
 `public_html`: that is hprnepal.org.np. Every push to `main` deploys automatically
 through GitHub Actions (`.github/workflows/deploy.yml`) over FTPS.
 
+Server: `fishtail.mysecurecloudserver.com` (set in the workflow; the domain is
+proxied by Cloudflare, so `ftp.<domain>` does not reach cPanel).
+
 ## Repository secrets (Settings > Secrets and variables > Actions)
 
 | Secret | Example |
 | --- | --- |
-| FTP_SERVER | the FTP server shown in cPanel > FTP Accounts > Configure FTP Client |
 | FTP_USERNAME | deploy@northerndoors.com.np |
 | FTP_PASSWORD | (password of the cPanel FTP account) |
 | FTP_SERVER_DIR | `./` (the deploy FTP account opens in /home2/hprnepal/northerndoors.com.np) |
