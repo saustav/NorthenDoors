@@ -1,72 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Northen Doors — Coming Soon</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      /* Reset default browser spacing so the page fills the screen */
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northern Doors · The answer is north.</title>
+<meta name="description" content="Northern Doors. Café and continental kitchen in Kathmandu. Opening 01.12.">
+<meta name="theme-color" content="#262520">
+<link rel="canonical" href="https://northerndoors.com.np/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://northerndoors.com.np/">
+<meta property="og:title" content="Northern Doors · The answer is north.">
+<meta property="og:description" content="Café and continental kitchen in Kathmandu. Opening 01.12.">
+<meta property="og:image" content="https://northerndoors.com.np/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --charcoal:#262520; --cream:#F6F1E9; --sand:#E6D8C3; --terra:#B5532F; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: var(--charcoal); color: var(--cream);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    min-height: 100vh; min-height: 100svh;
+    display: flex; flex-direction: column;
+    padding: clamp(24px, 5vw, 56px);
+  }
+  header { display: flex; justify-content: space-between; align-items: center; }
+  header img { width: 98px; height: auto; display: block; }
+  .date { font-size: 15px; letter-spacing: .18em; color: var(--sand); }
+  main { flex: 1; display: flex; flex-direction: column; justify-content: center; max-width: 1100px; width: 100%; margin: 0 auto; padding: 48px 0; }
+  .q { font-size: clamp(20px, 3vw, 30px); color: var(--sand); margin: 0 0 12px; min-height: 1.4em; transition: opacity .5s ease; }
+  h1 {
+    font-family: 'Fraunces', Georgia, serif; font-weight: 400;
+    font-size: clamp(96px, 27vw, 260px); line-height: .9; letter-spacing: -.02em; margin: 0;
+  }
+  h1 .dot { color: var(--terra); }
+  .line { font-family: 'Fraunces', Georgia, serif; font-size: clamp(20px, 2.6vw, 28px); margin: 28px 0 0; color: var(--cream); }
+  footer { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; font-size: 15px; color: var(--sand); }
+  footer nav { display: flex; gap: 24px; flex-wrap: wrap; }
+  a { color: var(--sand); text-decoration: none; border-bottom: 1px solid rgba(230,216,195,.35); padding-bottom: 2px; }
+  a:hover, a:focus-visible { color: var(--cream); border-color: var(--terra); outline: none; }
+  @media (prefers-reduced-motion: reduce) { .q { transition: none; } }
+</style>
+</head>
+<body>
+  <header>
+    <img src="nd-mark.png" alt="Northern Doors" width="196" height="106">
+    <span class="date" aria-label="Opening 1 December">01.12</span>
+  </header>
 
-      body {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #1c1612;
-        color: #f4efe8;
-        font-family: "Source Sans 3", sans-serif;
-      }
+  <main>
+    <p class="q" id="q" aria-live="polite">Coffee at 7 AM?</p>
+    <h1>Uttar<span class="dot">.</span></h1>
+    <p class="line">The answer is north.</p>
+  </main>
 
-      /* Soft glow behind the content, like light through a doorway */
-      .page {
-        width: min(640px, calc(100% - 40px));
-        text-align: center;
-        padding: 64px 28px;
-        background:
-          radial-gradient(ellipse at top, rgba(201, 162, 86, 0.12), transparent 55%),
-          #241c16;
-        border: 1px solid rgba(201, 162, 86, 0.28);
-      }
+  <footer>
+    <span>Kathmandu</span>
+    <nav aria-label="Social">
+      <a href="https://www.instagram.com/northerndoors.ktm/" rel="noopener" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/northerndoors.ktm" rel="noopener" target="_blank">Facebook</a>
+      <a href="https://www.tiktok.com/@northerndoors.ktm" rel="noopener" target="_blank">TikTok</a>
+      <a href="mailto:hello@northerndoors.com.np">hello@northerndoors.com.np</a>
+    </nav>
+  </footer>
 
-      .brand {
-        letter-spacing: 0.28em;
-        text-transform: uppercase;
-        font-size: 0.78rem;
-        color: #c9a256;
-        margin-bottom: 28px;
-      }
-
-      h1 {
-        font-family: "Cormorant Garamond", serif;
-        font-size: clamp(3rem, 8vw, 5.2rem);
-        font-weight: 500;
-        line-height: 1;
-        margin-bottom: 18px;
-      }
-
-      p {
-        font-size: 1.05rem;
-        line-height: 1.6;
-        color: #d8cfc4;
-      }
-    </style>
-  </head>
-  <body>
-    <main class="page">
-      <p class="brand">Northen Doors</p>
-      <h1>Coming Soon</h1>
-      <p>A new site is on the way.</p>
-    </main>
-  </body>
+<script>
+  (function () {
+    var qs = ["Coffee at 7 AM?", "Somewhere quiet to talk?", "Where to, after Thamel?", "First date?", "Birthday for twelve?", "What's the question?"];
+    var el = document.getElementById('q'), i = 0;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    setInterval(function () {
+      el.style.opacity = 0;
+      setTimeout(function () { i = (i + 1) % qs.length; el.textContent = qs[i]; el.style.opacity = 1; }, 500);
+    }, 3200);
+  })();
+</script>
+</body>
 </html>
